@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
 	<meta charset="UTF-8">
-	<title>$Title$</title>
+	<title>Tabel2</title>
 </head>
+
 <body>
-$END$
+	<table border="1">
+		<caption>Keeruline tabel</caption>
+		<tr>
+			<td colspan="3">colspan@row1, col1-3</td>
+			<td rowspan="3">rowspan@row1-3, col4</td>
+		</tr>
+
+		<tr>
+			<td rowspan="3">rowspan@row2-4, col1</td>
+			<td>row2, col2</td>
+			<td>row2, col3</td>
+		</tr>
+
+		<tr>
+			<td>row3, col2</td>
+			<td>row3, col3</td>
+		</tr>
+
+		<tr>
+			<td colspan="3">colspan@row4, col 2-4</td>
+		</tr>
+	</table>
 </body>
+
 </html>
