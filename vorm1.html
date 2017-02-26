@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vorm1</title>
+</head>
+
+<body>
+	<form action="/vorm1.html" method="get" name="input_types" onsubmit="return false;">
+
+		<table border="1">
+			<tr>
+				<td>input: text</td>
+				<td>
+					<input type="text" name="txt" maxlength="12">
+				</td>
+			</tr>
+
+			<tr>
+				<td>input: password</td>
+				<td>
+					<input type="password" name="pwd" maxlength="12">
+				</td>
+			</tr>
+
+			<tr>
+				<td>input: checkbox</td>
+				<td>
+					<label>
+						<input type="checkbox" name="check1"> Esimene valik</label>
+					<br>
+					<label>
+						<input type="checkbox" name="check2"> Teine valik</label>
+					<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td>input: file</td>
+				<td>
+					<input type="file" name="file">
+				</td>
+			</tr>
+
+			<tr>
+				<td>input: email</td>
+				<td>
+					<input type="email" name="email">
+				</td>
+			</tr>
+
+			<tr>
+				<td>input: url</td>
+				<td>
+					<input type="url" name="url">
+				</td>
+			</tr>
+
+			<tr>
+				<td>select</td>
+				<td>
+					<select>
+						<option>Esimene valik</option>
+						<option>Teine valik</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>textarea</td>
+				<td>
+					<textarea name="txtarea"></textarea>
+				</td>
+			</tr>
+		</table>
+
+		<button type="submit" name="submitbtn">Submit</button>
+
+	</form>
+</body>
+
+</html>
