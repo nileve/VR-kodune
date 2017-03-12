@@ -34,8 +34,8 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 	height: 85%;
 	width: 85%;
 	background-color: white;
-	border: groove;
-	left: (100%-width%)/2%;
+	border: blue;
+	left: 7.5%;
 	top: 7.5%;
 }
 
@@ -43,7 +43,7 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 	height: 70%;
 	width: 70%;
 	background-color: red;
-	border: groove;
+	border: blue;
 	left: 15%;
 	top: 15%;
 }
@@ -52,7 +52,7 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 	height: 55%;
 	width: 55%;
 	background-color: white;
-	border: #0A24A9;
+	border: blue;
 	left: 22.5%;
 	top: 22.5%;
 }
@@ -61,7 +61,7 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 	height: 40%;
 	width: 40%;
 	background-color: red;
-	border: groove;
+	border: blue;
 	left: 30%;
 	top: 30%;
 }
@@ -70,7 +70,7 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 	height: 25%;
 	width: 25%;
 	background-color: white;
-	border: groove;
+	border: blue;
 	left: 37.5%;
 	top: 37.5%;
 }
@@ -79,7 +79,7 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 	height: 10%;
 	width: 10%;
 	background-color: red;
-	border: groove;
+	border: blue;
 	left: 45%;
 	top: 45%;
 }
