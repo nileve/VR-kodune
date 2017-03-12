@@ -1,0 +1,93 @@
+body {
+	background-color: #0A24A9;
+}
+
+/* Määrata kõige välimisele div-ile CSS abil võrdse väärtusega kõrgus ja laius,
+positsioneerimise meetodiks olgu fixed. koordinaadid vasakult ja ülevalt valida oma soovi järgi */
+#target {
+	height: 200px;
+	width: 200px;
+	position: fixed;
+	top: 100px;
+	left: 100px;
+}
+
+/* Määrata kõigile sisemistele div-idele borderi raadius 50% (et nad oleks ümmargused)
+ning positsioneerimise meetodiks absolute */
+.target-circle {
+	border-radius: 50%;
+	position: absolute;
+}
+
+/* Kasutada selektoreid mis lõppevad :nth-child(n) kirjapildiga, kus n on järjekorra number,
+et selekteerida järjest sisemisi div-e ning määrata nende:
+    Kõrgus - suurus protsentides. Esimene 100%-ga suurim, teised kahaneva väärtusega
+    laius - sama mis kõrgus
+    taustavärvus - vaheldumisi punane ja valge (kui sisemisi div-e on paarisarv siis on soovitatav
+    alustada valgest)
+    piirjoon - pidev joon taustaga sobivat värvi
+    left - kaugus div-e ümbritseva div-i äärest. arvutatav kui kasutada valemit
+    "left=(100%-width%)/2
+    top - sama mis left
+ */
+.target-circle:nth-child(1) {
+	height: 85%;
+	width: 85%;
+	background-color: white;
+	border: groove;
+	left: (100%-width%)/2%;
+	top: 7.5%;
+}
+
+.target-circle:nth-child(2) {
+	height: 70%;
+	width: 70%;
+	background-color: red;
+	border: groove;
+	left: 15%;
+	top: 15%;
+}
+
+.target-circle:nth-child(3) {
+	height: 55%;
+	width: 55%;
+	background-color: white;
+	border: #0A24A9;
+	left: 22.5%;
+	top: 22.5%;
+}
+
+.target-circle:nth-child(4) {
+	height: 40%;
+	width: 40%;
+	background-color: red;
+	border: groove;
+	left: 30%;
+	top: 30%;
+}
+
+.target-circle:nth-child(5) {
+	height: 25%;
+	width: 25%;
+	background-color: white;
+	border: groove;
+	left: 37.5%;
+	top: 37.5%;
+}
+
+.target-circle:nth-child(6) {
+	height: 10%;
+	width: 10%;
+	background-color: red;
+	border: groove;
+	left: 45%;
+	top: 45%;
+}
+
+.bg {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
