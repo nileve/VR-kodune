@@ -21,7 +21,7 @@ if (isset($_POST['borderStyle']) && $_POST['borderStyle']!='') {
 }
 $borderW="5";
 if (isset($_POST['borderWidth']) && $_POST['borderWidth']!='') {
-        $borderW=htmlspecialchars($_POST['borderWidth]);
+        $borderW=htmlspecialchars($_POST['borderWidth']);
 }
 $borderR="5";
 if (isset($_POST['borderRadius']) && $_POST['borderRadius']!='') {
