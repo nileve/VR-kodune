@@ -85,9 +85,16 @@ et selekteerida järjest sisemisi div-e ning määrata nende:
 }
 
 .bg {
+	z-index: -1;
 	width: 100%;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	left: 0;
+}
+
+#valideerimiseks {
+	position: fixed;
+	right: 20%;
+	bottom: 20%;
 }
