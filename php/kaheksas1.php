@@ -35,10 +35,8 @@ if (isset($_POST['borderRadius']) && $_POST['borderRadius']!='') {
 <meta charset="UTF-8">
 	<title>8. kodune</title>
 	<style>
-	body {
-		background: <?php echo $bgC; ?>;
-	}
 	.text {
+		background: <?php echo $bgC; ?>;
 		color: <?php echo $txtC; ?>;
 		border-color: <?php echo $borderC;?>;
         border-style: <?php echo $borderS;?>;
