@@ -29,49 +29,57 @@ if (isset($_POST['borderRadius']) && $_POST['borderRadius']!='') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-	<title>8. kodune</title>
-	<style>
-	.text {
-		background: <?php echo $bgC; ?>;
-		color: <?php echo $txtC; ?>;
-		border-color: <?php echo $borderC;?>;
-        border-style: <?php echo $borderS;?>;
-        border-width: <?php echo $borderW;?>px;
-        border-radius: <?php echo $borderR;?>px;
-	}
-	</style>
-</head>
+    <!DOCTYPE html>
+    <html>
 
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>8. kodune</title>
+        <style>
+            .text {
+                background: <?php echo $bgC;
+                ?>;
+                color: <?php echo $txtC;
+                ?>;
+                border-color: <?php echo $borderC;
+                ?>;
+                border-style: <?php echo $borderS;
+                ?>;
+                border-width: <?php echo $borderW;
+                ?>px;
+                border-radius: <?php echo $borderR;
+                ?>px;
+            }
 
-<textarea class="text" rows="10" cols="100">
+        </style>
+    </head>
+
+    <body>
+
+        <textarea class="text" rows="10" cols="100">
 <?php
 echo $txt; 
 ?>
 </textarea>
-<br>
+        <br>
 
-<form method="post" action="" id ="input">
-<textarea name="text" form="input" rows="10" cols="100" placeholder="asd"></textarea>
-<p><input type="color" name="bgColor" value="<?php echo $bgC;?>">Taustavärvus</p>
-<p><input type="color" name="textColor" value="<?php echo $txtC;?>">Teksti värvus</p>
-<p><input type="color" name="borderColor" value="<?php echo $borderC;?>">Piirjoone värvus</p>
-<p>Piirjoone stiil 
-<select name="borderStyle">
+        <form method="post" action="" id="input">
+            <textarea name="text" form="input" rows="10" cols="100" placeholder="asd"></textarea>
+            <p><input type="color" name="bgColor" value="<?php echo $bgC;?>">Taustavärvus</p>
+            <p><input type="color" name="textColor" value="<?php echo $txtC;?>">Teksti värvus</p>
+            <p><input type="color" name="borderColor" value="<?php echo $borderC;?>">Piirjoone värvus</p>
+            <p>Piirjoone stiil
+                <select name="borderStyle">
 	<option value="dotted">Dotted</option>
 	<option value="dashed">Dashed</option>
     <option value="solid">Solid</option>   
 </select>
-</p>
-<p><input type="number" name="borderWidth" min="0" max="20" value="<?php echo $borderW;?>">Piirjoone laius 0-20px</p>
-<p><input type="number" name="borderRadius" min="0" max="100" value="<?php echo $borderR;?>">Piirjoone nurga raadius 0-100px</p>
-<button type="submit">esita</button></p>
-</form>
+            </p>
+            <p><input type="number" name="borderWidth" min="0" max="20" value="<?php echo $borderW;?>">Piirjoone laius 0-20px</p>
+            <p><input type="number" name="borderRadius" min="0" max="100" value="<?php echo $borderR;?>">Piirjoone nurga raadius 0-100px</p>
+            <button type="submit">esita</button></p>
+        </form>
 
-</body>
+    </body>
 
-</html>
+    </html>
