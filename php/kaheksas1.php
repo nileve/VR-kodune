@@ -1,4 +1,4 @@
- <?php
+<?php
 $txt = "Sinu tekst";
 if (isset($_POST['text']) && $_POST['text'] != "") {
                 $txt = htmlspecialchars($_POST['text']);
