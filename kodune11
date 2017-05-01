@@ -41,13 +41,17 @@ VALUES ('ott', 2, 'karu', 15)
 
 SELECT nimi
 	,puur
-FROM 10040908 _loomaaed
+FROM 10040908_loomaaed
 WHERE puur = 34;
 
 SELECT max(vanus) "vanim loom"
 	,min(vanus) "noorim loom"
-FROM 10040908 _loomaaed;
+FROM 10040908_loomaaed;
 
 SELECT puur
-	,count(nimi) kokku 10040908 _loomaaed
+	,count(nimi) kokku from 10040908_loomaaed
 GROUP BY 1;
+
+UPDATE 10040908_loomaaed
+SET vanus = vanus + 1;
+
