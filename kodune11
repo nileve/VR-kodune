@@ -1,0 +1,53 @@
+/* 
+2-Luua uus tabel 'loomaaed', kus on järgnevad väljad:
+    id - täisarv, automaatselt suurenev primaarvõti
+    nimi - tekstiline väärtus
+    vanus - täisarv
+    liik - tesktiline väärtus
+    puur - täisarv
+*/
+
+CREATE TABLE 10040908_loomaaed (
+	id INT PRIMARY KEY auto_increment
+	,nimi VARCHAR(50)
+	,vanus INT
+	,liik VARCHAR(25)
+	,puur INT
+	);
+/*
+3-Täita eelnevalt loodud tabel vähemalt 5 reaga.
+Sisestamisel valida andmed nii, et mõned loomad jagavad samat puuri ja mõnest liigist on mitu looma.
+*/
+
+INSERT INTO 10040908_loomaaed (
+	nimi, vanus, liik, puur
+	)
+VALUES ('ott', 2, 'karu', 15)
+	,('sven', 1, 'laiskloom', 76)
+	,('mari', 5, 'lendorav', 34)
+   ,('mari2', 5, 'lendorav', 34)
+   ,('mari3', 5, 'lendorav', 34)
+	,('alf', 10, 'hunt', 9)
+	,('george', 15, 'makaak', 123)
+   ;
+   
+/*
+4-Koostada järgnevad päringud:
+    Hankida kõigi mingis ühes kindlas puuris elavate loomade nimi ja puuri number
+    Hankida vanima ja noorima looma vanused
+    hankida puuri number koos selles elavate loomade arvuga (vihjeks: group by ja count )
+    suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra
+*/
+
+SELECT nimi
+	,puur
+FROM 10040908 _loomaaed
+WHERE puur = 34;
+
+SELECT max(vanus) "vanim loom"
+	,min(vanus) "noorim loom"
+FROM 10040908 _loomaaed;
+
+SELECT puur
+	,count(nimi) kokku 10040908 _loomaaed
+GROUP BY 1;
