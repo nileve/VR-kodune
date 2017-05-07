@@ -25,6 +25,20 @@ function logout(){
 
 function kuva_puurid(){
 	// siia on vaja funktsionaalsust
+   $query = "SELECT DISTINCT(puur) FROM 10040908_loomaaed2 ORDER BY puur";
+   $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
+   // hangime tulemusest 1 rea
+   $puurid = array();
+   while ($row = mysqli_fetch_assoc($result)){
+      $puurid[$row["puur"]] = array();
+      $query2 = "SELECT * FROM 10040908_loomaaed2 WHERE puur = ".$row["puur"];
+      $result2 = mysqli_query($connection, $query2) or die("$query2 - ".mysqli_error($connection));
+      while ($row2 = mysqli_fetch_assoc($result2)) {
+         $puurid[$row["puur"]][] = $row2;
+      }
+   }
+
+   print_r($puurid);
 
 	include_once('views/puurid.html');
 
