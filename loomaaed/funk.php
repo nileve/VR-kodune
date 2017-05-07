@@ -24,6 +24,7 @@ function logout(){
 }
 
 function kuva_puurid(){
+   global $connection;
 	// siia on vaja funktsionaalsust
    $query = "SELECT DISTINCT(puur) FROM 10040908_loomaaed2 ORDER BY puur";
    $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
