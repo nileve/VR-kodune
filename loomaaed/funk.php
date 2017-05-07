@@ -39,7 +39,7 @@ function kuva_puurid(){
       }
    }
 
-   echo "</pre>";
+   echo "<pre>";
    print_r($puurid);
    echo "</pre>";
 
