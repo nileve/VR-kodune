@@ -1,26 +1,61 @@
 <?php
 
-
 function connect_db(){
 	global $connection;
-	$host="localhost";
-	$user="test";
-	$pass="t3st3r123";
-	$db="test";
+	$host = "localhost";
+	$user = "test";
+	$pass = "t3st3r123";
+	$db = "test";
 	$connection = mysqli_connect($host, $user, $pass, $db) or die("ei saa ühendust mootoriga- ".mysqli_error());
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
+
 }
 
-function logi(){
+function login(){
 	// siia on vaja funktsionaalsust (13. nädalal)
+   global $connection;
+
+   if ($_SERVER['REQUEST_METHOD']=='GET'){
+		include_once('views/login.html');
+	}
+
+	if (!empty($_SESSION["user"])){
+		header("Location: ?page=loomad");
+	}
+
+   if($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $errors = array();
+      if (empty($_POST["user"]) || empty($_POST["pass"])){
+         $errors[]= "Check logins";
+         include_once('views/login.html');
+      } else {
+         $u = mysqli_real_escape_string($connection, $_POST["user"]);
+         $p = mysqli_real_escape_string($connection, $_POST["pass"]);
+
+         $sql = "SELECT * FROM 10040908_kylastajad WHERE username = '$u' AND passw = SHA2('$p')";
+
+         $result = mysqli_query($connection, $sql);
+         $row = mysqli_num_rows($result);
+
+         if ($row >= 1) {
+            $_SESSION["user"] = $_POST["user"];
+            header("Location: ?page=loomad");
+         } else {
+            header("Location: ?page=login");
+         }
+
+      }
+   }
 
 	include_once('views/login.html');
+
 }
 
 function logout(){
-	$_SESSION=array();
+	$_SESSION = array();
 	session_destroy();
 	header("Location: ?");
+
 }
 
 function kuva_puurid(){
@@ -30,6 +65,7 @@ function kuva_puurid(){
    $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
    // hangime tulemusest 1 rea
    $puurid = array();
+
    while ($row = mysqli_fetch_assoc($result)){
       $puurid[$row["puur"]] = array();
       $query2 = "SELECT * FROM 10040908_loomaaed2 WHERE puur = ".$row["puur"];
@@ -81,6 +117,7 @@ function upload($name){
 	} else {
 		return "";
 	}
+
 }
 
 ?>
