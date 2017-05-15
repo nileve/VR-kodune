@@ -12,7 +12,7 @@ include_once('views/head.html');
 
 switch($page){
 	case "login":
-		logi();
+		login();
 	break;
 	case "loomad":
 		kuva_puurid();
