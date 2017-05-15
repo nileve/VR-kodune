@@ -63,7 +63,7 @@ function login() {
          $u = mysqli_real_escape_string($connection, $_POST["user"]);
          $p = mysqli_real_escape_string($connection, $_POST["pass"]);
 
-         $sql = "SELECT * FROM 10040908_kylastajad WHERE username = '$u' AND passw = SHA2('$p')";
+         $sql = "SELECT * FROM 10040908_kylastajad WHERE username = '$u' AND passw = SHA1('$p')";
 
          $result = mysqli_query($connection, $sql);
          $row = mysqli_num_rows($result);
